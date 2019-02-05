@@ -426,7 +426,7 @@ do_pkg () {
 # If we're bootstrapping from a Git clone, install the local version of Cabal
 # instead of downloading one from Hackage.
 do_Cabal_pkg () {
-    if [ -d "../.git" ]
+    if [ -e "../.git" -a -d ../Cabal ]
     then
         if need_pkg "Cabal" ${CABAL_VER_REGEXP}
         then
